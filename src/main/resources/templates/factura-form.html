@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Facturas</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Facturas</h1>
+
+        <form method="POST" th:action="@{/factura/save}" th:object="${obj}">
+            <input type="hidden" th:field="*{id}" th:value="*{id}"/>
+            <input placeholder="Número de la factura" name="numero" th:field="*{numero}" th:value="*{numero}"/><br/>
+            <input placeholder="Monto de la factura" name="monto" th:field="*{monto}" th:value="*{monto}"/><br/>
+            <br>
+            <input type="submit" value="adicionar"/>
+        </form>      
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Editar Contratos</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Editar Contratos</h1>
+
+        <form method="POST" th:action="@{/contrato/save}" th:object="${obj}">
+            <input type="hidden" th:field="*{id}" th:value="*{id}"/>
+            <input placeholder="Número de contrato" name="numero" th:field="*{numero}" th:value="*{numero}"/><br/>
+            <input placeholder="Acápite del contrato" name="descr" th:field="*{descr}" th:value="*{descr}"/><br/>
+            <input placeholder="Nombre del beneficiario" name="beneficiario" th:field="*{beneficiario}" th:value="*{beneficiario}"/><br/>
+            <input placeholder="Banco" name="banco" th:field="*{banco}" th:value="*{banco}"/><br/>
+            <input placeholder="Cuenta bancaria" name="cuenta" th:field="*{cuenta}" th:value="*{cuenta}"/><br/>
+            <br>
+            <input type="submit" value="adicionar"/>
+        </form>      
+    </body>
+</html>

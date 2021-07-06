@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <form method="POST" th:action="@{/listarpeliculasduracion}">
+            <input placeholder="Tiempo duración" name="duracion"/><br/>
+            <input type="submit" value="buscar"/>
+        </form>      
+        
+        <table>
+            <th:block th:each="p:${peliculas}">
+                <tr>
+                    <td th:text="${p.titulo}"></td>
+                    <td th:text="${p.duracion}"></td>
+                </tr>
+            </th:block>
+        </table>
+    </body>
+</html>
